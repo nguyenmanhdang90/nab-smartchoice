@@ -3,5 +3,21 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-
+    <changeSet author="smartchoice-fapi" id="CREATE_TABLE_USER">
+        <sql>
+            CREATE TABLE `user` (
+            id serial NOT NULL AUTO_INCREMENT,
+            username varchar(50) NOT NULL,
+            `password` varchar(255) NOT NULL,
+            email varchar(355) NOT NULL,
+            PRIMARY KEY ( id )
+            );
+        </sql>
+    </changeSet>
+    <changeSet author="smartchoice-fapi" id="CREATE_NAB_USER">
+        <sql>
+            INSERT INTO `user` (`username`,`password`,`email` ) VALUES
+            ('nab-smartchoice','$2a$10$ZnoVjM2zmkU5UjJkmEMwce2XRVXZDhEdwYIqIZtGPAgBQEfPj/oAC','smartchoice@gmail.com');
+        </sql>
+    </changeSet>
 </databaseChangeLog>

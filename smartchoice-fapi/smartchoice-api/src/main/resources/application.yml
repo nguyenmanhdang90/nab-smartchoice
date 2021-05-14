@@ -16,3 +16,6 @@ spring:
     database-change-log-lock-table: LIQUIBASECHANGELOGLOCK # Name of table to use for tracking concurrent Liquibase usage.
     database-change-log-table: LIQUIBASECHANGELOG # Name of table to use for tracking change history.
     drop-first: false
+jwt:
+  secret: jwtSecret
+  expirationMs: 1800000 # 1800000ms = 30 minutes
