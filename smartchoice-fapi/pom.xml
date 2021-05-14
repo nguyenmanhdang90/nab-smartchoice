@@ -16,13 +16,13 @@
 
     <properties>
         <java.version>8</java.version>
-        <!--        <sonar.host.url>https://sonarcloud.io/</sonar.host.url>-->
-        <!--        <sonar.login>3185d6ac5f0cffdafd42de7e56468d3adf32a106</sonar.login>-->
-        <!--        <sonar.organization>com.nab</sonar.organization>-->
-        <!--        <sonar.projectKey>smartchoice</sonar.projectKey>-->
-        <!--        <sonar.moduleKey>-->
-        <!--            ${project.groupId}:${project.artifactId}-->
-        <!--        </sonar.moduleKey>-->
+        <sonar.projectKey>nguyenmanhdang90_nab-smartchoice</sonar.projectKey>
+        <sonar.organization>nguyenmanhdang90</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>3185d6ac5f0cffdafd42de7e56468d3adf32a106</sonar.login>
+        <sonar.moduleKey>
+            ${project.groupId}:${project.artifactId}
+        </sonar.moduleKey>
     </properties>
 
     <dependencies>
