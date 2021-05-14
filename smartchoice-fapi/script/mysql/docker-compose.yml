@@ -1,0 +1,15 @@
+version: '2.0'
+services:
+  smartchoice-mysql:
+    platform: linux/x86_64
+    container_name: smartchoice-mysql
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=Root@2021
+      - MYSQL_DATABASE=root
+    command: mysqld --sql_mode=""
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
