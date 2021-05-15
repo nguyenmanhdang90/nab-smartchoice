@@ -42,6 +42,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/product/app",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"product",
+						"app"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {

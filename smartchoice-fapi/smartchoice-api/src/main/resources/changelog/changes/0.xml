@@ -55,4 +55,19 @@
             );
         </sql>
     </changeSet>
+    <changeSet author="smartchoice-fapi" id="CREATE_SAMPLE_PRODUCT">
+        <sql>
+            INSERT INTO `product` (`name`,`code`) VALUES
+            ('shirt','P1'),
+            ('samsung galaxy S1','P2'),
+            ('app iphone 1','P3'),
+            ('app iphone 5','P4'),
+            ('app iphone 6','P5'),
+            ('polo shirt','P7'),
+            ('mac book air m1','P8'),
+            ('mac book air intel','P9'),
+            ('paint','P10'),
+            ('nike','P11');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
