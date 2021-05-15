@@ -20,4 +20,39 @@
             ('nab-smartchoice','$2a$10$ZnoVjM2zmkU5UjJkmEMwce2XRVXZDhEdwYIqIZtGPAgBQEfPj/oAC','smartchoice@gmail.com');
         </sql>
     </changeSet>
+    <changeSet author="smartchoice-fapi" id="CREATE_SUPPLIER">
+        <sql>
+            CREATE TABLE `supplier` (
+            id serial NOT NULL AUTO_INCREMENT,
+            name varchar(50),
+            `description` varchar(255) ,
+            `token` varchar(355) ,
+            PRIMARY KEY ( id )
+            );
+        </sql>
+    </changeSet>
+    <changeSet author="smartchoice-fapi" id="CREATE_PRODUCT">
+        <sql>
+            CREATE TABLE `product` (
+            id serial NOT NULL AUTO_INCREMENT,
+            name varchar(50),
+            `code` varchar(255),
+            PRIMARY KEY ( id )
+            );
+        </sql>
+    </changeSet>
+    <changeSet author="smartchoice-fapi" id="CREATE_SUPPLIER_PRODUCT">
+        <sql>
+            CREATE TABLE `supplier_product` (
+            id serial NOT NULL AUTO_INCREMENT,
+            `supplier_id` INT,
+            `product_id` INT,
+            `price` DECIMAL,
+            `discount` DECIMAL,
+            `description` varchar(255),
+            `valid_until` DATETIME,
+            PRIMARY KEY ( id )
+            );
+        </sql>
+    </changeSet>
 </databaseChangeLog>
