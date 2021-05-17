@@ -14,7 +14,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
 
-  private static final String TOKEN = "TOKEN";
+  private static final String TOKEN = "TOKEN_LOGS";
 
   private static final String TOKEN_TYPE = "Bearer";
 

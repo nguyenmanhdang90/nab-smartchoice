@@ -22,3 +22,5 @@ jwt:
 
 crawler:
   url: http://localhost:8090/api/price/
+logs:
+  url: http://localhost:8070/api/log

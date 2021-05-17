@@ -5,7 +5,9 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.client.support.HttpRequestWrapper;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.task.DelegatingSecurityContextAsyncTaskExecutor;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
@@ -52,6 +55,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       return execution.execute(new HttpRequestWrapper(request), body);
     });
     return restTemplate;
+  }
+
+  @Bean(name = "restTemplateForLogs")
+  public RestTemplate restTemplateForLogs() {
+    RestTemplate restTemplate = new RestTemplate();
+    restTemplate.getInterceptors().add((request, body, execution) -> {
+      request.getHeaders().add("Authorization", "Bearer TOKEN_LOGS");
+      return execution.execute(new HttpRequestWrapper(request), body);
+    });
+    return restTemplate;
+  }
+
+  @Bean
+  public TaskExecutor getAsyncExecutor() {
+    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+    executor.setCorePoolSize(8);
+    executor.setMaxPoolSize(50);
+    executor.setWaitForTasksToCompleteOnShutdown(true);
+    executor.setThreadNamePrefix("Async-");
+    executor.initialize();
+    return new DelegatingSecurityContextAsyncTaskExecutor(executor);
   }
 
   @Bean
