@@ -12,5 +12,5 @@ public interface SupplierProductRepository extends JpaRepository<SupplierProduct
 
   void deleteByProductId(Integer productId);
 
-  List<SupplierProduct> findByProductId(Integer ProductId);
+  List<SupplierProduct> findByProductId(Integer productId);
 }
