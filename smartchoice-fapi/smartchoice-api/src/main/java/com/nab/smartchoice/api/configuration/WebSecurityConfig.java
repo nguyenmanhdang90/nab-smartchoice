@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.support.HttpRequestWrapper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -43,9 +44,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     return new AuthTokenFilter();
   }
 
-  @Bean
-  public RestTemplate getRestTemplate() {
-    return new RestTemplate();
+  @Bean(name = "restTemplateForCrawler")
+  public RestTemplate restTemplateForCrawler() {
+    RestTemplate restTemplate = new RestTemplate();
+    restTemplate.getInterceptors().add((request, body, execution) -> {
+      request.getHeaders().add("Authorization", "Bearer TOKEN");
+      return execution.execute(new HttpRequestWrapper(request), body);
+    });
+    return restTemplate;
   }
 
   @Bean

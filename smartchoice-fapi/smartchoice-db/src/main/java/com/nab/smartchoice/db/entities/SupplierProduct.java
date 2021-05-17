@@ -24,6 +24,16 @@ import lombok.NoArgsConstructor;
 public class SupplierProduct implements Serializable {
   private static final long serialVersionUID = -894206350964002047L;
 
+  public SupplierProduct(Integer supplierId, Integer productId, Double price, Double discount, String description,
+      Date validUntil) {
+    this.supplierId = supplierId;
+    this.productId = productId;
+    this.price = price;
+    this.discount = discount;
+    this.description = description;
+    this.validUntil = validUntil;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "`id`")
