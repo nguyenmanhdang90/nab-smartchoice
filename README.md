@@ -75,7 +75,13 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
  - Store an many to many relation ship between supplier and product, also act as a cache layer for smartchoice-fapi with expiry time.
  - Data get from third party
-  
+
+---
+
+## Work flow of get price from third party
+
+<img alt="workflow.svg" src="./documents/workflow.svg">
+
 ## Start development process:
 
 
