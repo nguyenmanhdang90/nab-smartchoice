@@ -12,12 +12,14 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.util.ReflectionTestUtils;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
@@ -37,7 +39,28 @@ public class WebSecurityConfigTest {
   private UserDetailsSecurityServiceImpl userDetailsService;
 
   @Test
-  public void bean() throws Exception {
+  public void taskExecutorInitial() {
+    TaskExecutor result = webSecurityConfig.getAsyncExecutor();
+    Assert.assertNotNull(result);
+  }
+
+  @Test
+  public void restTemplateForLogsShouldNotNull() {
+    RestTemplate result = webSecurityConfig.restTemplateForLogs();
+    Assert.assertEquals(1, result.getInterceptors().size());
+    Assert.assertNotNull(result);
+  }
+
+
+  @Test
+  public void restTemplateForCrawlerShouldNotNull() {
+    RestTemplate result = webSecurityConfig.restTemplateForCrawler();
+    Assert.assertEquals(1, result.getInterceptors().size());
+    Assert.assertNotNull(result);
+  }
+
+  @Test
+  public void bean() {
     Assert.assertSame(AuthTokenFilter.class, webSecurityConfig.authenticationJwtTokenFilter().getClass());
     Assert.assertSame(BCryptPasswordEncoder.class, webSecurityConfig.passwordEncoder().getClass());
 
