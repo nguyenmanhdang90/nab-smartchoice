@@ -22,7 +22,7 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 *Only smartchoice-fapi is well-coverd by unit test, because it has the most function and business feature. Also by the scope of this test, I decided not take too much time try to cover all line of code for the others project. But the business code is well test by unit test*
 
-*There are several issue with security hotspot scanned by sonarqube, I have aknowleadge them all and decided to by pass them since not have enought time and resource to handle them all*
+*There are several issue with security hotspot scanned by sonarqube, I have aknowleadge them all and decided to by pass them since not have enought time and resource to handle them all, Ex: store sonar login token in source code,...*
 
 ---
 ## Development stack:
