@@ -6,7 +6,7 @@ spring:
       ddl-auto: none
       auto: none
   datasource:
-    url: jdbc:mysql://172.21.0.1:3306/root?allowpublickeyretrieval=true&usessl=false
+    url: jdbc:mysql://172.22.0.1:3306/root?allowpublickeyretrieval=true&usessl=false
     username: root
     password: Root@2021
     driverClassName: com.mysql.cj.jdbc.Driver

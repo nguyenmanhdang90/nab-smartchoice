@@ -70,7 +70,6 @@
             ('nike','P11');
         </sql>
     </changeSet>
-
     <changeSet author="smartchoice-fapi" id="CREATE_SAMPLE_SUPPLIER">
         <sql>
             INSERT INTO `supplier` (`name`,`description`) VALUES
@@ -78,7 +77,6 @@
             ('TIKI','tiki supplier');
         </sql>
     </changeSet>
-
     <changeSet author="smartchoice-fapi" id="CREATE_LOG">
         <sql>
             CREATE TABLE `logs` (

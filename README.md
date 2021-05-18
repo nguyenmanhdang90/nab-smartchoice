@@ -100,7 +100,7 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 ## How to start development
 
- - make sure you are using intellJ or other IDE can acept `.editorconfig` file
+ - make sure you are using intellJ or other IDE can acept `.editorconfig` file and have lombok configured
  - java 8 is installed
  - Docker and docker compose are installed
 
