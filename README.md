@@ -86,7 +86,35 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 <img alt="workflow.svg" src="./documents/workflow.svg">
 
-## Start development process:
+---
+## Technical Practice being apply
+
+ - **lombok** to get risk of boiler plate code
+ - **Async** call to logs to reduce the impact of loging system with business system
+ - **liquibase** to manage database
+ - CI with **github actions**
+ - Code scan with **sonarqube**
+ - **Docker**
+ - smartchoice-db also act as a **cache layer**to prevent sent too many request to third party
+ - **Microservice** and **modularization** are applied
+
+## How to start development
+
+ - make sure you are using intellJ or other IDE can acept `.editorconfig` file
+ - java 8 is installed
+ - Docker and docker compose are installed
+
+Start to develop
+
+ 1. bring up mysql: run `/smartchoice-fapi/scripts/start.sh`
+ 1. modify the resource of `smartchoice-fapi/src/main/resources/application.yml` to `jdbc:mysql://<MYSQLIP>:3306/` (usually localhost)
+ 1. modify the resource `smartchoice-log/src/main/resources/application.yml` to `jdbc:mysql://<MYSQLIP>:3306/` (usually localhost)
+ 1. Start smartchoice-crawler
+ 1. Start smartchoice-fapi
+ 1. Start smartchoice-log
+ 1. Default username/password for authentication is inside `postman` script
+
+ 
 
 
 ## How to run
