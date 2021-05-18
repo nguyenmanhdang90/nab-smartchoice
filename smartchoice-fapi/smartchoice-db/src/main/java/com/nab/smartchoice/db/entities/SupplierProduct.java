@@ -1,6 +1,5 @@
 package com.nab.smartchoice.db.entities;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -21,18 +20,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "`supplier_product`")
 @AllArgsConstructor
 @NoArgsConstructor
-public class SupplierProduct implements Serializable {
-  private static final long serialVersionUID = -894206350964002047L;
-
-  public SupplierProduct(Integer supplierId, Integer productId, Double price, Double discount, String description,
-      Date validUntil) {
-    this.supplierId = supplierId;
-    this.productId = productId;
-    this.price = price;
-    this.discount = discount;
-    this.description = description;
-    this.validUntil = validUntil;
-  }
+public class SupplierProduct {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

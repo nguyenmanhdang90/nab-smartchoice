@@ -7,11 +7,14 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 import com.nab.smartchoice.db.SmartChoiceDBApplication;
 
+import lombok.Generated;
+
 @SpringBootApplication
 @Import(SmartChoiceDBApplication.class)
 @EnableAsync
 public class SmartChoiceApiApplication {
 
+  @Generated
   public static void main(String[] args) {
     SpringApplication.run(SmartChoiceApiApplication.class, args);
   }

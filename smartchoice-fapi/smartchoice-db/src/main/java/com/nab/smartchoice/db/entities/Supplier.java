@@ -1,7 +1,5 @@
 package com.nab.smartchoice.db.entities;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,10 +18,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "`supplier`")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Supplier implements Serializable {
+public class Supplier {
 
-
-  private static final long serialVersionUID = 4833550308234551011L;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "`id`")

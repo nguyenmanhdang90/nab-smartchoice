@@ -1,5 +1,6 @@
 package com.nab.smartchoice.api.configuration;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -13,6 +14,9 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.task.TaskExecutor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpRequest;
+import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -45,17 +49,29 @@ public class WebSecurityConfigTest {
   }
 
   @Test
-  public void restTemplateForLogsShouldNotNull() {
+  public void restTemplateForLogsShouldNotNull() throws IOException {
+    HttpRequest request = Mockito.mock(HttpRequest.class);
+    byte[] body = new byte[]{};
+    ClientHttpRequestExecution clientHttpRequestExecution = Mockito.mock(ClientHttpRequestExecution.class);
+    HttpHeaders headers = Mockito.mock(HttpHeaders.class);
+    Mockito.when(request.getHeaders()).thenReturn(headers);
     RestTemplate result = webSecurityConfig.restTemplateForLogs();
     Assert.assertEquals(1, result.getInterceptors().size());
+    result.getInterceptors().get(0).intercept(request, body, clientHttpRequestExecution);
     Assert.assertNotNull(result);
   }
 
 
   @Test
-  public void restTemplateForCrawlerShouldNotNull() {
+  public void restTemplateForCrawlerShouldNotNull() throws IOException {
+    HttpRequest request = Mockito.mock(HttpRequest.class);
+    byte[] body = new byte[]{};
+    ClientHttpRequestExecution clientHttpRequestExecution = Mockito.mock(ClientHttpRequestExecution.class);
+    HttpHeaders headers = Mockito.mock(HttpHeaders.class);
+    Mockito.when(request.getHeaders()).thenReturn(headers);
     RestTemplate result = webSecurityConfig.restTemplateForCrawler();
     Assert.assertEquals(1, result.getInterceptors().size());
+    result.getInterceptors().get(0).intercept(request, body, clientHttpRequestExecution);
     Assert.assertNotNull(result);
   }
 
