@@ -4,9 +4,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import com.nab.smartchoice.log.dto.LogDto;
+import com.nab.smartchoice.log.entities.Logs;
 import com.nab.smartchoice.log.repo.LogsRepository;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -45,6 +47,7 @@ public class LogServiceImplTest {
   public void writeLog() {
     LogDto logDto = LogDto.builder().action("action").username("username").build();
     logService.writeLog(logDto);
+    Mockito.verify(logsRepository).save(Mockito.any(Logs.class));
   }
 
 
