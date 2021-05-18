@@ -2,24 +2,22 @@
 
 ## Project status
 
-### build
-
-[![build crawler](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20crawler.yml/badge.svg)](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20crawler.yml)
-[![build fapi](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build.yml/badge.svg)](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build.yml)
-[![build logs](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20logs.yml/badge.svg)](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20logs.yml)
-
-### Quality
+https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 #### smartchoice-fapi: 
 
+[![build fapi](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build.yml/badge.svg)](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nguyenmanhdang90_nab-smartchoice&metric=alert_status)](https://sonarcloud.io/dashboard?id=nguyenmanhdang90_nab-smartchoice)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=nguyenmanhdang90_nab-smartchoice&metric=coverage)](https://sonarcloud.io/dashboard?id=nguyenmanhdang90_nab-smartchoice)
 
 #### smartchoice-log:
 
+[![build logs](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20logs.yml/badge.svg)](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20logs.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=smartchoice-log&metric=alert_status)](https://sonarcloud.io/dashboard?id=smartchoice-log)
 
 #### smartchoice-crawler: 
+
+[![build crawler](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20crawler.yml/badge.svg)](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20crawler.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=smartchoice-crawler-2&metric=alert_status)](https://sonarcloud.io/dashboard?id=smartchoice-crawler-2)
 
 ---
@@ -38,7 +36,11 @@
  1. Github actions
  1. Sonarcloud
 
+---
 
+## infrastructure
+
+<img alt="RBAC.svg" src="./documents/infrastructure.svg">
 
  
 Technical stack
