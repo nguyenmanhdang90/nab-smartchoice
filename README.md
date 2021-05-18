@@ -40,7 +40,7 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 ## infrastructure
 
-<img alt="RBAC.svg" src="./documents/infrastructure.svg">
+<img alt="infrastructure.svg" src="./documents/infrastructure.svg">
 
 ## smartchoice-fapi: 
  - front-end API.
@@ -59,8 +59,22 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 => All of these services is separated and run independence by docker, communication with each other by REST API
 
-Technical stack
- 
+---
+## Database structure
+
+<img alt="schema.svg" src="./documents/schema.svg">
+
+## supplier
+ - Store list of already config supplier, ex: lazada, shopee
+
+## product
+
+ - Store list of already config product with product code map to third party, ex: apple iphone 1 with product code P1
+
+## supplier_product
+
+ - Store an many to many relation ship between supplier and product, also act as a cache layer for smartchoice-fapi with expiry time.
+ - Data get from third party
   
 ## Start development process:
 
