@@ -125,4 +125,21 @@ public class ProductServiceImplTest {
     Mockito.verify(supplierProductRepository).flush();
   }
 
+
+  @Test
+  public void getProductPrice_fromDB_withExpiryValidTime() {
+    String productCode = "P1";
+    Product product = Product.builder().id(1).build();
+    ProductPrice[] productPrices = {ProductPrice.builder().supplier("TIKI").build()};
+    Date twentyFourHourFromNow = Date.from(new Date().toInstant().minus(Duration.ofHours(24)));
+    SupplierProduct supplierProduct = SupplierProduct.builder().validUntil(twentyFourHourFromNow).build();
+    List<SupplierProduct> supplierProducts = Arrays.asList(supplierProduct);
+    Mockito.when(productRepository.findByCode(productCode)).thenReturn(Optional.of(product));
+    Mockito.when(supplierProductRepository.findByProductId(product.getId())).thenReturn(supplierProducts);
+    Mockito.when(restTemplate.getForObject(Mockito.anyString(), Mockito.any())).thenReturn(productPrices);
+    Mockito.when(supplierRepository.findByName("TIKI")).thenReturn(Optional.of(Supplier.builder().id(1).build()));
+    List<SupplierProduct> result = productService.getProductPrice(productCode);
+    Mockito.verify(restTemplate).getForObject(Mockito.anyString(), Mockito.any());
+  }
+
 }
