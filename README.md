@@ -42,7 +42,23 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 <img alt="RBAC.svg" src="./documents/infrastructure.svg">
 
- 
+## smartchoice-fapi: 
+ - front-end API.
+ - Have two module which is api and db.
+ - api contain REST API, also services and security.
+ - db contain entities and repository.
+
+## smartchocie-crawler
+ - Simple spring application in charge of make request to third party.
+ - communication by REST API
+ - For further expand, this project can modify into clonable by the scale of the whole system
+
+## smartchoice-log
+ - have a service and a entities to store user action in to db
+ - communication by REST API
+
+=> All of these services is separated and run independence by docker, communication with each other by REST API
+
 Technical stack
  
   
