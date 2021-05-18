@@ -20,6 +20,10 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 [![build crawler](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20crawler.yml/badge.svg)](https://github.com/nguyenmanhdang90/nab-smartchoice/actions/workflows/build%20crawler.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=smartchoice-crawler-2&metric=alert_status)](https://sonarcloud.io/dashboard?id=smartchoice-crawler-2)
 
+*Only smartchoice-fapi is well-coverd by unit test, because it has the most function and business feature. Also by the scope of this test, I decided not take too much time try to cover all line of code for the others project. But the business code is well test by unit test*
+
+*There are several issue with security hotspot scanned by sonarqube, I have aknowleadge them all and decided to by pass them since not have enought time and resource to handle them all*
+
 ---
 ## Development stack:
 
@@ -44,7 +48,7 @@ https://sonarcloud.io/organizations/nguyenmanhdang90/projects
 
 ## smartchoice-fapi: 
  - front-end API.
- - Have two module which is api and db.
+ - Have two modules which are api and db.
  - api contain REST API, also services and security.
  - db contain entities and repository.
 
