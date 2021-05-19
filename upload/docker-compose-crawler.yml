@@ -1,0 +1,12 @@
+version: '2'
+services:
+  smartchoice-crawler:
+    container_name: smartchoice-crawler
+    image: smartchoice-crawler:latest
+    ports:
+      - 8090:8090
+
+
+
+
+

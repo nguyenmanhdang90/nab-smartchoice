@@ -1,0 +1,14 @@
+version: '2'
+services:
+  smartchoice-log:
+    container_name: smartchoice-log
+    image: smartchoice-log:latest
+    environment:
+      - MYSQL_IP=172.22.0.2 # change mysql ip here
+    ports:
+      - 8070:8070
+
+
+
+
+

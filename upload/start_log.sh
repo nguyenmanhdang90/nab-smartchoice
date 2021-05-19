@@ -1,0 +1,1 @@
+docker-compose -f docker-compose-logs.yml up -d && docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' smartchoice-log

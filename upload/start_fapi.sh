@@ -1,0 +1,1 @@
+docker-compose -f docker-compose-fapi.yml up -d

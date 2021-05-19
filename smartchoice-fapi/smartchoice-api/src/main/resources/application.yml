@@ -21,6 +21,6 @@ jwt:
   expirationMs: 1800000 # 1800000ms = 30 minutes
 
 crawler:
-  url: http://${MYSQL_IP:localhost}:8090/api/price/
+  url: http://${CRAWLER_IP:localhost}:8090/api/price/
 logs:
-  url: http://${MYSQL_IP:localhost}:8070/api/log
+  url: http://${LOG_IP:localhost}:8070/api/log
