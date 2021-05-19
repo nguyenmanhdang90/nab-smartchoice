@@ -136,6 +136,6 @@ Start to develop
  1. run `start_log.sh`
  1. copy ip address of logs and put it in `docker-conpose-fapi.yml`(see pictures below)
     <img alt="logip.svg" src="./documents/logip.svg">
- 1. run `start_fapi.sh` and wait for 30 seconds
+ 1. run `start_fapi.sh` and wait up to 1-2 minutes (try `docker logs smartchoice-fapi` to know when its ready)
  1. load test api from `postman` folder to postman
  1. connect to db with details: `jdbc:mysql://localhost:3306/root?allowpublickeyretrieval=true&usessl=false` (username: root; password: Root@2021) to see more details
