@@ -116,9 +116,17 @@ Start to develop
 
  
 ## How to run
-
+ 1. Make sure **docker** and **docker-compose** is installed
  1. download package from https://github.com/nguyenmanhdang90/nab-smartchoice/releases
+
+    1. docker-compose-mysql.yml
+    1. docker-compose-smartchoice.yml
+    1. preload.sh
+    1. start.sh
+    1. smartchoice-api:latest.tar
+    1. smartchoice-crawler:latest.tar
+    1. smartchocie-log:latest.tar
  1. run `preload.sh`
  1. run `start.sh`
  1. load test api from `postman` folder to postman
- 1. connect to db with server: 0.0.0.0:3306 (username: root; password: Root@2021) to see more details
+ 1. connect to db with details: `jdbc:mysql://localhost:3306/root?allowpublickeyretrieval=true&usessl=false` (username: root; password: Root@2021) to see more details

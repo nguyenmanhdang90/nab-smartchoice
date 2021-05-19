@@ -38,13 +38,20 @@
 					"path": [
 						"auth",
 						"signIn"
+					],
+					"query": [
+						{
+							"key": "Bearer",
+							"value": "",
+							"disabled": true
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "getProducts",
+			"name": "searchListProduct",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -67,6 +74,64 @@
 						"api",
 						"product",
 						"app"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getListSupplier",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/supplier",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPriceOfProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/product/price/P4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"product",
+						"price",
+						"P4"
 					]
 				}
 			},
