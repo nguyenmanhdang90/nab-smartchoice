@@ -115,6 +115,10 @@ Start to develop
  1. Default username/password for authentication is inside `postman` script
 
  
-
-
 ## How to run
+
+ 1. download package from https://github.com/nguyenmanhdang90/nab-smartchoice/releases
+ 1. run `preload.sh`
+ 1. run `start.sh`
+ 1. load test api from `postman` folder to postman
+ 1. connect to db with server: 0.0.0.0:3306 (username: root; password: Root@2021) to see more details
