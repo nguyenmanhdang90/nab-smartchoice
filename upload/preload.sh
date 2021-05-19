@@ -1,0 +1,1 @@
+docker load -i smartchoice-api.latest.tar && docker load -i smartchoice-crawler.latest.tar && docker load -i smartchoice-log.latest.tar

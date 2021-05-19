@@ -1,0 +1,1 @@
+docker-compose -f docker-compose-mysql.yml up -d && docker inspect smartchoice-mysql
