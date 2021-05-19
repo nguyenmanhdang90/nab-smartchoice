@@ -129,7 +129,7 @@ Start to develop
  1. run `preload.sh`
  1. run `start_mysql.sh`
  1. copy ip address of mysql and put it in `docker-compose-smartchoice.yml` (2 places, see pictures below)
- <img alt="mysql_ip.svg" src="./documents/mysql_ip.svg">
+    <img alt="mysql_ip.svg" src="./documents/mysql_ip.svg">
  1. run `start_smartchoice.sh`
  1. load test api from `postman` folder to postman
  1. connect to db with details: `jdbc:mysql://localhost:3306/root?allowpublickeyretrieval=true&usessl=false` (username: root; password: Root@2021) to see more details
