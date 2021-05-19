@@ -118,14 +118,6 @@ Start to develop
 ## How to run
  1. Make sure **docker** and **docker-compose** is installed
  1. download package from https://github.com/nguyenmanhdang90/nab-smartchoice/releases
-
-    1. docker-compose-mysql.yml
-    1. docker-compose-smartchoice.yml
-    1. preload.sh
-    1. start.sh
-    1. smartchoice-api:latest.tar
-    1. smartchoice-crawler:latest.tar
-    1. smartchocie-log:latest.tar
  1. run `preload.sh`
  1. run `start_mysql.sh`
  1. copy ip address of mysql and put it in `docker-compose-logs.yml` and `docker-conpose-fapi.yml`(2 places, see pictures below)
